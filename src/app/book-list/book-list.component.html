@@ -1,18 +1,43 @@
-<h1>Books</h1>
-<div *ngFor="let book of books$ | async">
-    <h2>{{book.title}}</h2>
-    <h3>{{book.author}}</h3>
-    <button (click)="removeBook(book.id)">Remove Book</button>
-</div>
-
-
-<h2>Create a new book</h2>
-
-<div>
-    <input #bookId type="text" placeholder="Book Id">
-    <input #bookTitle type="text" placeholder="Book Title">
-    <input #bookAuthor type="text" placeholder="Author">
-    <button (click)="addBook(bookId.value, bookTitle.value, bookAuthor.value)">
-        Add Book
-    </button>
-</div>
+<div class="form-container">
+    <header class="form-header">
+      <h2>Header Area</h2>
+    </header>
+  
+    <div class="content-wrapper">
+      <div class="main-content">
+        <div class="title-area">
+          <h3>Form Title</h3>
+        </div>
+  
+        <div class="book-form">
+          <label for="book-id">Book ID</label>
+          <input id="book-id" #bookId type="text" placeholder="Book Id">
+          
+          <label for="book-title">Book Title</label>
+          <input id="book-title" #bookTitle type="text" placeholder="Book Title">
+          
+          <label for="book-author">Author</label>
+          <input id="book-author" #bookAuthor type="text" placeholder="Author">
+          
+          <div class="buttons">
+            <button (click)="resetFields(bookId, bookTitle, bookAuthor)">
+              Reset
+            </button>
+            <button (click)="addBook(bookId.value, bookTitle.value, bookAuthor.value)">
+              Add Book
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <aside class="sidebar">
+        <h3>Sidebar</h3>
+        <p>Sidebar content here</p>
+      </aside>
+    </div>
+  
+    <footer class="form-footer">
+      <p>Footer Content Here</p>
+    </footer>
+  </div>
+  

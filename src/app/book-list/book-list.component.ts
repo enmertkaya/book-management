@@ -21,6 +21,12 @@ export class BookListComponent {
   addBook(id: string, title:string, author:string){
     this.store.dispatch(AddBook({id,title,author}));
   }
+    
+  resetFields(bookId: HTMLInputElement, bookTitle: HTMLInputElement, bookAuthor: HTMLInputElement) {
+    bookId.value = '';
+    bookTitle.value = '';
+    bookAuthor.value = '';
+  }
 
   removeBook(bookId: string){
     this.store.dispatch(RemoveBook({bookId}));
